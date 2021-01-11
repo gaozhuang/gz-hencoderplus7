@@ -1,2 +1,2 @@
 # gz-hencoderplus7
-hencoder第7期学习编码demo存放
+(gaozhuang) hencoder第7期学习编码demo存放
