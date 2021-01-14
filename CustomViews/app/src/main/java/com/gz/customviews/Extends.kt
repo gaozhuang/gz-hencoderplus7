@@ -35,11 +35,20 @@ inline fun Int.pxValue(): Float {
     )
 }
 
-val Float.px: Float
+val Float.dp: Float
     get() {
         return TypedValue.applyDimension(
             TypedValue.COMPLEX_UNIT_DIP,
             this,
+            Resources.getSystem().displayMetrics
+        )
+    }
+
+val Int.dp: Float
+    get() {
+        return TypedValue.applyDimension(
+            TypedValue.COMPLEX_UNIT_DIP,
+            this.toFloat(),
             Resources.getSystem().displayMetrics
         )
     }

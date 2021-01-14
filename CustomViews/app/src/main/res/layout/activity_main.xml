@@ -1,13 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <com.gz.customviews.DashboardView
-        android:id="@+id/dash_board_view"
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.gz.customviews.MainViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/root_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerInParent="true"/>
+        android:background="#f2f2f2"
+        android:orientation="vertical"
+        android:padding="12dp">
 
-</RelativeLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_main_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingVertical="2dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_list_main" />
+
+    </RelativeLayout>
+</layout>

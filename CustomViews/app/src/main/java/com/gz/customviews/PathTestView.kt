@@ -10,7 +10,7 @@ import android.view.View
 
 class PathTestView(context: Context, attr: AttributeSet? = null, defType: Int = 0) :
     View(context, attr, defType) {
-    private val mRadius = 180f.px
+    private val mRadius = 180f.dp
 
     // 抗锯齿
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)

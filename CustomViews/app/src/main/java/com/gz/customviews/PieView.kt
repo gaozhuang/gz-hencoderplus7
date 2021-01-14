@@ -11,8 +11,8 @@ import kotlin.math.sin
 
 private const val CLICK_INDEX = 3
 
-private val RADIUS = 150f.px
-private val OFFSET_LENGTH = 20f.px
+private val RADIUS = 150f.dp
+private val OFFSET_LENGTH = 20f.dp
 
 private val ANGLES = floatArrayOf(50f, 90f, 60f, 40f, 50f, 10f, 60f)
 private val COLORS = arrayOf(
@@ -25,7 +25,7 @@ private val COLORS = arrayOf(
     Color.parseColor("#9900FF")
 )
 
-class PieView(context: Context, attributeSet: AttributeSet) : View(context, attributeSet) {
+class PieView(context: Context, attributeSet: AttributeSet? = null) : View(context, attributeSet) {
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {

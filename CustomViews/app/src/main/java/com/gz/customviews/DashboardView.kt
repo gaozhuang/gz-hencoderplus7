@@ -7,13 +7,13 @@ import android.view.View
 import kotlin.math.cos
 import kotlin.math.sin
 
-private val RADIUS = 150f.px
-private val INNER_RADIUS = 120f.px
-private val CENTER_RADIUS = 4f.px
+private val RADIUS = 150f.dp
+private val INNER_RADIUS = 120f.dp
+private val CENTER_RADIUS = 4f.dp
 private const val OPEN_ANGLE = 120f
 
-private val DASH_WIDTH = 2f.px
-private val DASH_LENGTH = 8f.px
+private val DASH_WIDTH = 2f.dp
+private val DASH_LENGTH = 8f.dp
 
 private const val GAPS = 20
 
@@ -30,7 +30,7 @@ class DashboardView(context: Context, attr: AttributeSet? = null) : View(context
     private var costTime = 0L
 
     init {
-        paint.strokeWidth = 3f.px
+        paint.strokeWidth = 3f.dp
         paint.style = Paint.Style.STROKE
         dash.addRect(0f, 0f, DASH_WIDTH, DASH_LENGTH, Path.Direction.CW)
 
@@ -54,7 +54,7 @@ class DashboardView(context: Context, attr: AttributeSet? = null) : View(context
                 0f,
                 PathDashPathEffect.Style.ROTATE
             )
-//        startTime = System.currentTimeMillis()
+        startTime = System.currentTimeMillis()
     }
 
     override fun onDraw(canvas: Canvas) {
