@@ -11,16 +11,16 @@ import android.widget.PopupWindow
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import kotlin.math.min
 import kotlin.reflect.KClass
 
 class MainActivity : AppCompatActivity() {
-    private val titleList = arrayOf("DashboardView", "PieView", "RoundImageView")
-    private val contentList = arrayOf("2021-01-13", "2021-01-13", "2021-01-14")
-    private val classList = arrayOf(DashboardView::class, PieView::class, RoundImageView::class)
+    private val titleList = arrayOf("DashboardView", "PieView", "RoundImageView", "SportView")
+    private val contentList = arrayOf("2021-01-13", "2021-01-13", "2021-01-14", "2021-01-15")
+    private val classList =
+        arrayOf(DashboardView::class, PieView::class, RoundImageView::class, SportView::class)
 
     private lateinit var rootView: View
 
@@ -31,7 +31,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         rootView = findViewById(R.id.root_view)
 
-        val listView = findViewById<RecyclerView>(R.id.rv_main_list)
+        val listView = findViewById<RecyclerView>(R.id.rv_main_list).also {
+            it.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
+            it.adapter = MyAdapter()
+        }
         listView.adapter = MyAdapter()
 
         windowSize = min(
@@ -56,8 +59,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         private fun popView(viewClass: KClass<out View>) {
-//            val popView: View = viewClass.constructors.first().call(this@MainActivity, null)
-            val popView = RoundImageView(this@MainActivity)
+            val popView: View = viewClass.constructors.first().call(this@MainActivity, null)
             val popWindow = PopupWindow(popView, windowSize, windowSize, false)
             popWindow.setBackgroundDrawable(
                 ContextCompat.getDrawable(
