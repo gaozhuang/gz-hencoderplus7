@@ -11,8 +11,8 @@ private val STROKE_WIDTH = 10.dp
 
 private val SRC_IN = PorterDuffXfermode(PorterDuff.Mode.SRC_IN)
 
-class RoundImageView(context: Context, attributeSet: AttributeSet? = null) :
-    View(context, attributeSet) {
+class RoundImageView(context: Context, attr: AttributeSet? = null) :
+    View(context, attr) {
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
 
     private val borderPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {

@@ -17,10 +17,24 @@ import kotlin.math.min
 import kotlin.reflect.KClass
 
 class MainActivity : AppCompatActivity() {
-    private val titleList = arrayOf("DashboardView", "PieView", "RoundImageView", "SportView")
-    private val contentList = arrayOf("2021-01-13", "2021-01-13", "2021-01-14", "2021-01-15")
+    private val titleList =
+        arrayOf(
+            "DashboardView仪表盘",
+            "PieView饼图",
+            "RoundImageView",
+            "SportView运动数据",
+            "MultiLineText图文混排"
+        )
+    private val contentList =
+        arrayOf("2021-01-13", "2021-01-13", "2021-01-14", "2021-01-15", "2021-01-16")
     private val classList =
-        arrayOf(DashboardView::class, PieView::class, RoundImageView::class, SportView::class)
+        arrayOf(
+            DashboardView::class,
+            PieView::class,
+            RoundImageView::class,
+            SportView::class,
+            MultiLineTextView::class
+        )
 
     private lateinit var rootView: View
 
