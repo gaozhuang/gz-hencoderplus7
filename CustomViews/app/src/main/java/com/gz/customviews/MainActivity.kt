@@ -23,17 +23,19 @@ class MainActivity : AppCompatActivity() {
             "PieView饼图",
             "RoundImageView",
             "SportView运动数据",
-            "MultiLineText图文混排"
+            "MultiLineText图文混排",
+            "Camera范围裁切与几何变换"
         )
     private val contentList =
-        arrayOf("2021-01-13", "2021-01-13", "2021-01-14", "2021-01-15", "2021-01-16")
+        arrayOf("2021-01-13", "2021-01-13", "2021-01-14", "2021-01-15", "2021-01-16", "2021-01-17")
     private val classList =
         arrayOf(
             DashboardView::class,
             PieView::class,
             RoundImageView::class,
             SportView::class,
-            MultiLineTextView::class
+            MultiLineTextView::class,
+            CameraView::class
         )
 
     private lateinit var rootView: View
