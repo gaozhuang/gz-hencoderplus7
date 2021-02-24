@@ -19,11 +19,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".CircleAnimatorActivity"
-            android:label="@string/title_item_detail"
-            android:theme="@style/Theme.Animators.NoActionBar">
-        </activity>
+        <activity android:name=".CircleAnimatorActivity" />
+        <activity android:name=".PointAnimatorActivity" />
+        <activity android:name=".CameraAnimatorActivity" />
+        <activity android:name=".TextAnimatorActivity" />
     </application>
 
 </manifest>

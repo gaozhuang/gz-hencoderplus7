@@ -9,8 +9,6 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 
 class ItemListActivity : AppCompatActivity() {
     private val itemList = arrayListOf<AnimatableItem>()
@@ -34,9 +32,30 @@ class ItemListActivity : AppCompatActivity() {
     private fun initItems() {
         itemList.add(
             AnimatableItem(
-                "圆的缩放",
+                "圆的缩放动画（View自带animate动画）",
                 "2021-01-20",
                 Intent(this, CircleAnimatorActivity::class.java)
+            )
+        )
+        itemList.add(
+            AnimatableItem(
+                "折叠头像动画（AnimatorSet顺序动画）",
+                "2021-01-20",
+                Intent(this, CameraAnimatorActivity::class.java)
+            )
+        )
+        itemList.add(
+            AnimatableItem(
+                "点的移动动画（自定义TypeEvaluator）",
+                "2021-01-20",
+                Intent(this, PointAnimatorActivity::class.java)
+            )
+        )
+        itemList.add(
+            AnimatableItem(
+                "文字动画（动画本质）",
+                "2021-01-21",
+                Intent(this, TextAnimatorActivity::class.java)
             )
         )
     }
